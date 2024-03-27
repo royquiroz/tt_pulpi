@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "21899f4b-223b-443e-9285-491eda2b8c42",
+		"name": "pulpi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4675532"
+	},
+	"item": [
+		{
+			"name": "Get transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"transaction"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "COMPLETED",
+							"disabled": true
+						},
+						{
+							"key": "folio",
+							"value": "AAF23409",
+							"disabled": true
+						},
+						{
+							"key": "rfc",
+							"value": "FFAL920101IT3",
+							"disabled": true
+						},
+						{
+							"key": "init_date",
+							"value": "2024-03-04",
+							"disabled": true
+						},
+						{
+							"key": "end_date",
+							"value": "2024-03-06",
+							"disabled": true
+						},
+						{
+							"key": "dates",
+							"value": "[2024-03-01, 2024-03-01]",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rfc\": \"FFAL920101IT2\",\r\n    \"retirement_date\": \"2024-03-06\",\r\n    \"status\": \"PENDING\",\r\n    \"amount\": 12,\r\n    \"comision\": 12\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/v1/transaction"
+			},
+			"response": []
+		},
+		{
+			"name": "Edit status transaction",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/transaction/?id=66034f3e24c7bd62e9c9dfc9&status=COMPLETED",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"transaction",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "66034f3e24c7bd62e9c9dfc9"
+						},
+						{
+							"key": "rfc",
+							"value": "FFAL920101IT3",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "COMPLETED"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete transaction",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3000/api/v1/transaction/66035116671fffe1ff98989c"
+			},
+			"response": []
+		},
+		{
+			"name": "Get users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/v1/user"
+			},
+			"response": []
+		}
+	]
+}
